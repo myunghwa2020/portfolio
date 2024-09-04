@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 배경색</title>
+    <style>
+        .box_gnb_banner{
+            height: 100px; /* 배너의 높이 설정 */
+            width: 100%; /* 배너의 너비 설정 */
+            text-align: center; /* 텍스트 정렬 */
+            line-height: 100px; /* 텍스트 수직 중앙 정렬 */
+            font-size: 24px; /* 텍스트 크기 */
+            color: white; /* 텍스트 색상 */
+            transition: background-color 1s; /* 배경색 변경 시 부드럽게 전환 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box_gnb_banner">
+       <div class="box_info"> <p>top banner</p></div>
+    </div>
+
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script>
+        const colors = [
+            '#192346', // Red-Orange
+            '#000000', // Green
+            '#ff0077', // Blue
+            '#0074cc', // Purple
+            '#777777'  // Yellow
+        ];
+
+        // 5가지 텍스트 배열
+        const texts = [
+            '역시, 최초의 대한항공카드답게, 대한항공카드 Edition2',
+            '빼어난 보안성. 그게 바로 Apple Pay.',
+            'Check out our 인플루언서를 위한 카드, 인플카 현대카드 news!',
+            'Explore our 코스트코 쇼핑할 땐 코스트코 리워드 현대카드 Edition2!',
+            'Have a great 취향을 만나는 곳, 새로워진 M몰을 만나 보세요!'
+        ];
+         // 랜덤 색상 선택 함수
+        function getRandomColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            return colors[randomIndex];
+        }
+        // 랜덤 텍스트 선택 함수
+        function getRandomText() {
+            const randomIndex = Math.floor(Math.random() * texts.length);
+            return texts[randomIndex];
+        }
+
+        // 배경색과 텍스트를 랜덤으로 변경
+        $('.box_gnb_banner').css('background-color', getRandomColor())
+        $('.box_info p').text(getRandomText());
+
+    </script>
+</body>
+</html>

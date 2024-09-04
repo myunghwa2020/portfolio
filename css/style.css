@@ -1,178 +1,344 @@
 @charset "utf-8";
+/* body{background-color: #f00;} */
+html,body{height: 2000px;}
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* 레이아웃 */
+#wrap {  height: 100%;  width: 100%;}
+#header {min-height: 130px;}
+.header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;left: 0;
+  background: #fff;
+  z-index: 999;
+  width: 100%;
+  min-width: 1530px;
+  min-height: 80px;
+  padding: 0 24px 0 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+#topBannerWrap {position: fixed;top: 80px;z-index: 990;width: 100%;height: 50px;background-color: #0070f0; color:#fff;}
+#content {width: 1600px;margin: 0 auto;display: flex;}
+.left_col {width: 1256px;padding: 60px 38px 160px 0;margin: 0;background-color: bisque;}
+.right_col {width: 343px;padding: 64px 0 160px 64px;border-left:1px solid #ccc ; background-color: beige;}
 
-/* reset */
-*{margin: 0;padding: 0; border: 0;}
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.5;
+/* 로고 */
+.header h1 {
+  float: left;
+  width: 200px;
+  height: 80px;
+  margin: 0;
+  z-index: 33;
+  position: relative;
 }
-ul,ol,li {list-style: none;}
-a {
-    color: #333;
-    text-decoration: none;
+.header h1 a {
+  display: block;
+  width: 100%;height: 100%;
 }
-.clearfix:after {content: '';display: block;clear: both;}
-
-/* 전체 레이아웃 */
-#wrap {width: 100%;background: #ffc700;}
-#header {
-    width: 100%; min-width: 1000px;
-    padding: 20px;box-sizing: border-box;
-    background: rgba(51,51,51,0.3);
-    margin-bottom: 30px;
+.header h1 a .logo_img {
+  position: absolute;
+  top: 16px;left: 40px;
+  float: left;
+  width: 160px;
+  height: 48px;
 }
-#main {height: 700px;}
-#footer {background: #000;padding: 20px 0;}
-.container {width: 1000px; margin: 0 auto; /* background: rgba(255,255,255,0.5); */}
-
-/* header */
-#header .container {display: flex;justify-content: space-between;align-items: center;}
-#header h1 img {display: block; width: 40px;}
-#header nav {}
-#header nav ul {}
-#header nav ul li {display: inline-block;}
-#header nav ul li a {
-    display: block;
-    padding: 10px 40px;
-    text-align: center;
-    font-size: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
+.header .logo_AoC {
+  position: absolute;
+  top: 4px;left: 0;
+  width: 115.94px;height: 44px;
+  background: url(../img/logo_AoC.svg) no-repeat center;
+  background-size: auto 44px;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.65,0,0.35,1); 
 }
-#header nav ul li:hover a {color:rgba(255,255,255,0.7)}
-#header .search {}
-#header .search a {
-    display: block;
-    width: 30px;height: 30px;
-    background: url(../img/search.svg) no-repeat;
-    background-size: cover;
-    text-indent: -9999px;
-
+.header .logo_HC {
+  position: absolute;
+  top: 11px;left: 0;
+  width: 111.96px;height: 22px;
+  background: url(../img/logo_hyundaicard_scr.svg) no-repeat center;
+  background-size: auto 22px;
+  transition: all 0.2s cubic-bezier(0.65,0,0.35,1);
 }
-#header .search:hover a {
-    opacity: 0.7;
-}
-
-/* main */
-#main .container {overflow: hidden; margin-bottom: 20px;}
-.img-wrap, .text-wrap {
-    float: left;
-    width: 50%;
-}
-.img-wrap {padding-top: 30px;}
-.img-wrap img {width: 100%;}
-.text-wrap {padding-top: 30px;}
-.text-wrap h2 {
-    font-size: 50px;font-weight: 700;
-    text-transform: uppercase;
-    line-height: 1;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-}
-.text-wrap h3 {
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 1;
-    margin-bottom: 10px;
-}
-.text-wrap .grade {
- overflow: hidden;
- margin-bottom: 20px;
-}
-.text-wrap .grade .star{
-    float: left;
-    display: block;
-    color: #333;
-    width: 20px;height: 20px;
-    background: url(../img/star.svg) no-repeat;
-    background-size: cover;
-}
-.text-wrap .grade .outline {
-    background-image: url(../img/star_line.svg);
-}
-.text-wrap ul {margin-bottom: 50px;}
-.text-wrap ul li{
-    margin-bottom: 16px;
-    padding-left: 12px;
-    text-align: justify;
-    position: relative;
-}
-.text-wrap ul li::before {
-    content: '';
-    display: block;
-    width: 4px;height: 4px;
-    border-radius: 50%;
-    background: #333;
-
-    position: absolute;
-    left:0;
-    top:9px;
-
+/* on클래스 추가 되었을때 */
+.header .logo_img.on .logo_AoC {opacity: 1;}
+.header .logo_img.on .logo_HC {
+  position: absolute;
+  top: 27.27px;left: 78.35px;
+  display: block;
+  width: 80px; height: 16px;
+  background-size: 80px 16px;
 }
 
-/* 가격과 버튼 */
-.text-wrap .price {margin-bottom: 20px;overflow: hidden;}
-.text-wrap .price h4 {
-    float: left;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1;
-    margin-right: 30px;
+/* 주메뉴 */
+.list_dep2 {  margin-left: 20px;}
+.list_dep2 > li {
+  float: left;
+  height: 100%;
+  border-bottom: 2px solid transparent;
 }
-.text-wrap .price .btn {
-    float: left;
+.list_dep2 > li > a {
+  display: block;
+  padding: 27px 20px 25px;
+  font-size: 18px;
+  font-family: 'hcT';
+  font-weight: 400;
+  line-height: 26px;
+  transition: all 0.25s cubic-bezier(.22,.61,.36,1);
+}
+.list_dep2 > li.active {border-bottom: 2px solid #000;}
+
+/* 애플메뉴 */
+.list_dep2 > li:last-child {position: relative;}
+.list_dep2 > li:last-child a{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.list_dep2 > li:last-child::before {
+  content: '';
+  width: 1px;
+  height: 20px;
+  background-color: #ddd;
+  position: absolute;
+  left: 0;top: 30px;
+}
+
+/* 서브메뉴 */
+.box_bg{
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 40;
+  width: 100%;height: 400px;
+  border-top: 1px solid #ebebeb;
+  box-shadow: 0 4px 14px -8px rgba(0,0,0,0.12);
+  background: #fff;
+}
+.box_dep3_in {
+  width: 1200px;
+  margin: 24px auto;
+  display: flex;
+}
+.box_dep3_in .box_dep3_left {
+  float: left;
+  width: 874px;
+  min-height: 374px;
+}
+.box_dep3_in .box_dep3_right {
+  float: right;
+  width: 326px;
+  min-height: 340px;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  padding-left: 44px;
+  border-left: 1px solid #d6d6d6;
+}
+/* 3dep 왼쪽메뉴 */
+.list_dep3 {
+  margin-top: 12px;
+  margin-bottom: 32px;
+  float: left;
+  width: 204px;
+}
+.list_dep3 p {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.list_dep3 > ul.list {margin-top: 10px;}
+.list_dep3 > ul.list > li {margin-top: 4px;}
+.list_dep3 > ul.list > li > a{
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "hcR";
+  color: #5c5c5c;
+}
+
+/* 3dep 오른쪽메뉴 */
+.box_dep3_right p.tit_dep3,.login_prev p.login_info{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+.box_dep3_right .login_prev {
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
 }
-.text-wrap .price .btn a {
-    display: block;
-    width: 170px;height: 40px;background: #333;
-    color: #fff;
-    line-height: 40px;
-    border-radius: 20px;
-    text-align: center;text-transform: uppercase;
-    transition: 0.2s;
+.box_dep3_right .login_prev .box_btn {margin-top: 23px;}
+.box_dep3_right .login_prev .box_btn a {
+  display: inline-block;
+  height: 40px;
+  padding: 9px 7px 9px 8px;
+  font-size: 14px;
+  line-height: 22px;
+  border-radius: 8px;
+  background: #ebebeb;
+  width: 120px;
+}
+.apple_banner {margin-top: 60px;}
+.apple_banner a {
+  display: inline-block;
+  width: 100%;
+  height: 68px;
+}
+.apple_banner a img{
+  width: 100%;
+}
 
+/* 기타메뉴 */
+.box_etc {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 20px 0;
 }
-.text-wrap .price .btn:hover a {
-    background: rgba(51,51,51,0.3);
-    color:#000;
+.box_etc .list_etc {margin-right: 13px;}
+.box_etc .list_etc li {float: left;}
+.box_etc .list_etc li a {
+  display: block;
+  padding: 2px 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5c5c5c;
+  font-weight: 400;
 }
-.text-wrap .price p {
-    padding-top: 20px;
-    clear: both;
-    font-size: 14px;
-    color: #fff;
-    margin-bottom: 20px;
+/* 세번째 li에 bar추가 */
+.box_etc .list_etc li.bar {
+  padding-right: 8px;
+  margin-right: 9px;
+  position: relative;
+}
+.box_etc .list_etc li.bar::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 12px;
+  background-color:#e0e0e0;
+  position: absolute;
+  right: 0;top: 50%;
+  margin-top: -6px;
+}
+/* 검색메뉴 */
+.box_etc .input_cell_box {
+  float: left;
+  width: 240px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  box-sizing: border-box;
+  transition: all 0.2s ease; 
+}
+.box_etc .input_cell_box a {
+  height: 100%;
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color:rgba(0,0,0,0.48);
+  position: relative;
+}
+.box_etc .input_cell_box a::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  background: url(../img/searchB.png) no-repeat 0% 50%;
+  background-size: 28px 28px;
+  opacity: 0.4;
+  transform: translateY(-50%);
 }
 
-/* footer */
-#footer nav {}
-#footer nav ul {text-align: center;}
-#footer nav ul li {display: inline-block;}
-#footer nav ul li a{
-    display: block;padding: 20px 30px;
-    color: #999;
-    text-align: center;
-    font-size: 14px;
-    position: relative;
+/* top banner */
+.box_gnb_banner .box_gnb_in {
+  width: 1600px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-#footer nav ul li a::after {
-    content: '';
-    width: 1px;height: 13px;background: #999;
-    position: absolute;
-    left:0;top:25px;
+.box_gnb_banner .box_gnb_in .box_info p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
 }
-#footer nav ul li:first-child a::after {
-    width: 0;
-} 
-#footer p{
-    color: #999;
-    text-align: center;
-    font-size: 14px;
+/* 오늘하루 창버튼(체크박스,닫기버튼) */
+.box_gnb_banner .box_btn {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+.box_gnb_banner .box_btn label{
+  display: block;
+  height: 32px;
+  padding-left: 36px;
+  font-size: 14px;
+  line-height: 32px;
+  color:#fff;
+  background: url(../img/ico_checkbox_off_wht.png) no-repeat 0 50% /32px;
+}
+.box_gnb_banner .box_btn input[type="checkbox"]:checked+label {
+  background-image: url(../img/ico_checkbox_on_wht.png);
+}
+.box_gnb_banner .box_btn a {
+  display: block;
+  width: 48px;height: 48px;
+  background: url(../img/ico_x_o_gry.png) no-repeat 100% 50% ;
+  background-size: 32px 32px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* 스크롤을 내리면  small클래스가 붙을때 */
+.header.small {
+  height: 48px;min-height: 48px;
+}
+.header.small h1{
+  width: 140px;
+  height: 48px;
+  background-size: 108px 22px;
+}
+.header.small .logo_img {
+  top: 0;
+  width: 140px;
+}
+.header.small .list_dep2 {
+  padding-left: 16px;
+}
+.header.small .list_dep2 >li>a{
+  font-size: 14px;
+  line-height: 25px;
+  padding: 11px 12px 10px;
+  font-weight: 600;
+  font-family: "hcR";
+}
+.header.small .list_dep2 >li:last-child::before {
+  top: 15px;
+}
+.header.small .list_etc {
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(.22,.61,.36,1);
+}
+.header.small .input_cell_box {
+  float: right;
+  height: 32px;
+  border-color: #ccc;
+}
+.header.small .box_bg {
+  top: 48px;
+}
+.header.small + #topBannerWrap {
+  top: 48px;
 }
