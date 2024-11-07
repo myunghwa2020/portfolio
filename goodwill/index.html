@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>goodwill</title>
+  <link rel="icon" href="./img/favicon.ico">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.m-menu').click(function(){
+        $('#header nav').slideToggle(200)
+      })
+      $(window).resize(function(){
+        var win_w = $(window).width()
+        if(win_w>600){
+          // PC화면
+          $('#header nav').css('display','flex')
+        }else{
+          // 모바일화면
+          $('#header nav').css('display','none')
+        }
+      })
+    })
+  </script>
+
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+      <div class="container">
+        <h1><a href="#"></a></h1>
+        <!-- 햄버거 아이콘 추가 -->
+         <div class="m-menu"></div>
+         
+        <nav>
+          <ul>
+            <li class="on"><a href="#">Home</a></li>
+            <li><a href="#">Causes</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Bolg</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Elements</a></li>
+          </ul>
+          <div class="search"><a href="#">Search</a></div>
+          <div class="cart"><span>0</span><a href="#">Cart</a></div>
+          <div class="donate"><a href="#">Donate</a></div>
+        </nav>
+      </div>
+    </header><!-- //id="header" -->
+
+    <main id="main">
+      <section id="mainVisual">
+        <div class="container">
+          <div class="main_text">
+            <h2>Help The <strong>Children</strong> in Need</h2>
+            <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula, hinc partem ei est.</p>
+            <div class="btn"><a href="#">View More</a></div>
+          </div>
+        </div>
+      </section>
+      <!-- 기부하기 -->
+      <section id="donate">
+        <div class="container">
+          <div class="title">
+            <h2>Join In The Donation</h2>
+            <p>A child's life can be changed by my choice.</p>
+          </div>
+          <ul>
+            <li>
+              <div class="overbg">
+                <p>Today is the day to reach out and lend a helping hand </p>
+                <div class="btn"><a href="#">Donate</a></div>
+              </div>
+            </li>
+            <li>
+              <div class="overbg">
+                <p>Even the smallest of donations can help change a life</p>
+                <div class="btn"><a href="#">Donate</a></div>
+              </div>
+            </li>
+            <li>
+              <div class="overbg">
+                <p>Become a volunteer. You’ll feel the benefits instantly</p>
+                <div class="btn"><a href="#">Donate</a></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- 우리는 누구 -->
+      <section id="whoWeAre">
+        <div class="container">
+          <div class="title">
+            <h2>Who We Are</h2>
+            <p>Organization set up to provide help and raise money for those in need</p>
+          </div>
+          <ul>
+            <li>
+              <figure>
+                <img src="./img/h1-img-4.jpg" alt="Places To Get Lost">
+              </figure>
+              <figcaption>
+                <h3>Places To Get Lost</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit hendrerit faucibus. Suspendisse hendrerit turpis dui, eget ultricies erat consequat ut. Sed ac velit iaculis, condimentum neqlu.</p>
+              </figcaption>
+            </li>
+            <li>
+              <figure>
+                <img src="./img/h1-img-5.jpg" alt="Healthy Food For All">
+              </figure>
+              <figcaption>
+                <h3>Healthy Food For All</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit hendrerit faucibus. Suspendisse hendrerit turpis dui, eget ultricies erat consequat ut. Sed ac velit iaculis, condimentum neqlu.</p>
+              </figcaption>
+            </li>
+            <li>
+              <figure>
+                <img src="./img/h1-img-6.jpg" alt="Green Organization">
+              </figure>
+              <figcaption>
+                <h3>Green Organization</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit hendrerit faucibus. Suspendisse hendrerit turpis dui, eget ultricies erat consequat ut. Sed ac velit iaculis, condimentum neqlu.</p>
+              </figcaption>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="subcribe">
+        <div class="container">
+          <h3>Subscribe and receive weekly our newsletter</h3>
+          <div class="btn"><a href="#">Subscribe</a></div>
+        </div>
+      </section>
+    </main><!-- //id="main" -->
+    <footer id="footer">
+      <div class="footer-wrap">
+        <div class="container">
+          <ul>
+            <li class="about">
+              <h4>About Us</h4>
+              <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expet endis in. Meinan an pericula.</p>
+              <dl>
+                <dt>Call us</dt>
+                <dd>+615 4640 3304</dd>
+                <dt>Visit us</dt>
+                <dd>2976 Washington St San Francisco, CA 94115</dd>
+              </dl>
+            </li>
+            <li class="link">
+              <h4>Links</h4>
+              <ul>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Recent Causes</a></li>
+                <li><a href="#">Latest Events</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Who We Are?</a></li>
+              </ul>
+            </li>
+            <li class="post">
+              <h4>Latest Posts</h4>
+              <dl>
+                <dt><a href="#">Care for All People</a></dt>
+                <dd>April 19, 2024</dd>
+                <dt><a href="#">Find a Project</a></dt>
+                <dd>April 19, 2024</dd>
+                <dt><a href="#">Being Volunteer</a></dt>
+                <dd>April 19, 2024</dd>
+              </dl>
+            </li>
+            <li class="map">
+              <h4>Worldwide Organisations</h4>
+              <img src="./img/footer-img.png" alt="map">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sns-acount">
+        <div class="container">
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Tumblr</a></li>
+            <li><a href="#">Vimeo</a></li>
+            <li><a href="#">Linkedin</a></li>
+          </ul>
+          <p>©Copyright 2024 All rights reserved.</p>
+        </div>
+      </div>
+    </footer><!-- //id="footer" -->
+
+  </div>
+</body>
+</html>

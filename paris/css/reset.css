@@ -1,0 +1,49 @@
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* @font-face{
+    font-family:"PBGothic";
+    src:url(../font/PBGothicOTFRg.eot);
+    } */
+/* reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, q, pre, a, abbr, address, cite, code, img, em, strong, small, strike, sub, sup, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, th, tr, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: top;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+
+body{
+    font-family: 'Noto Sans KR', '돋움','Arial',sans-serif;
+    line-height: 1;
+    color: #333;
+    font-size: 100%;
+    /* background:#00519a; */
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+ol, ul, li{list-style: none;}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+label {cursor: pointer;}
+i,em, address {font-style: normal; font-weight: normal;}
+.clearfix:after{ content: '';display: block; clear: both;}
+.blind {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    text-indent: -9999px;
+}
+img {width: 100%;}
+
